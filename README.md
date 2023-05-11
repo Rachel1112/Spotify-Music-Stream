@@ -28,7 +28,7 @@ Before you can run the project, you must have the following installed:
 
   - Connect to the server: 
     
-    Open a terminal (such as PowerShell on Windows) to move to the installation directory of MongoDB, like:
+    Open a terminal (such as cmd on Windows) to move to the installation directory of MongoDB, like:
     `````
     cd C:\Program Files\MongoDB\Server\6.0\bin
     `````
