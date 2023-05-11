@@ -76,7 +76,7 @@ npm run start
 
 ```
 npm run start
-npm i jquery -S
+npm install jquery
 ```
 Make sure the jQuery script is fully loaded into your browser!!! Or you will encounter compilation problems in the first time, please close the FrontEnd port and try again.
 
