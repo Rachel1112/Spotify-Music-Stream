@@ -1,11 +1,11 @@
 var MongoClient = require('mongodb').MongoClient;
 const {ObjectId} =require('mongodb');
-var url = "mongodb://localhost:27017/song";
-var databasename="song";
+var url = "mongodb://localhost:27017/music";
+var databasename="music";
 var filename="user";
 
 
-//用户注册
+// User Register
 const registerModel=async(postData)=>{
     var bl=false;
     var conn=null;
@@ -23,7 +23,7 @@ const registerModel=async(postData)=>{
 }
 
 
-//用户登录
+//User Login
 const loginModel=async(postData)=>{
     var conn=null;
     conn=await MongoClient.connect(url,{useNewUrlParser: true, useUnifiedTopology: true });
@@ -32,7 +32,7 @@ const loginModel=async(postData)=>{
     return query;
 }
 
-//用户名查询
+//Username search
 const findUsername=async(username)=>{
     var conn=null;
     conn=await MongoClient.connect(url,{useNewUrlParser: true, useUnifiedTopology: true });
@@ -41,7 +41,7 @@ const findUsername=async(username)=>{
     return query;
 }
 
-//邮箱查询
+//Search by email
 const findEmailModel=async(email)=>{
     var conn=null;
     conn=await MongoClient.connect(url,{useNewUrlParser: true, useUnifiedTopology: true });
@@ -52,7 +52,7 @@ const findEmailModel=async(email)=>{
 
 
 
-//用户信息修改
+//User information modify
 const updateModel=async(postData)=>{
     var bl=false;
     var conn=null;
@@ -68,11 +68,6 @@ const updateModel=async(postData)=>{
     }
     return bl;
 }
-
-
-
-
-
 
 module.exports={
     registerModel,
