@@ -1,7 +1,7 @@
 import React, { useState,useEffect, useMemo } from "react";
 import { Form, Input, Button,Checkbox,Alert,notification } from 'antd';
 import './style.css';
-
+import $ from 'jquery';
   
 function Login() {
   const [email,setEmail]=useState("");
