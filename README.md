@@ -52,13 +52,13 @@ Before you can run the project, you must have the following installed:
 
 ### Installation
 
-1. Install the dependencies for both the front-end and back-end from root directory:
+1. In the `FrontEnd` folder and the `BackEnd` folder, install dependencies separately:
 
 ```
 npm install
 ```
 
-2. Configure the environment variables for the back-end. In the `backend` directory, create a `.env` file and add the following:
+2. Configure the environment variables for the back-end. In the `BackEnd` directory, create a `.env` file and add the following:
 
 ```
 MONGO_URI=<your-mongodb-uri>
