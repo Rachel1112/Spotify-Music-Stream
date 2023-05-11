@@ -2,13 +2,13 @@ const{
     registerModel,
     updateModel,
     findEmailModel,
-}=require(process.cwd()+'/models/user');    
-const LocalStorage = require('node-localstorage').LocalStorage,
-localStorage = new LocalStorage('./scratch');
-const ejs=require('ejs');
+}=require(process.cwd()+'/models/user');
+const{
+    getToken
+}=require(process.cwd()+'/models/token');    
 const fs = require('fs');
 const bcrypt=require('bcrypt');
-//导入 JWT 相关的两个包，分别是 jsonwebtoken 和 express-jwt
+//Import two packages related to JWT, jsonwebtoken and express-jwt
 const jwt = require('jsonwebtoken');
 const expressjwt = require('express-jwt');
 const secretKey = 'spotify';
@@ -16,9 +16,7 @@ const {schemaRegisterUpdate,schemaLogin}=require(process.cwd()+'/util/joi');
 const Joi = require('joi');
 
 
-
-
-//用户注册控制层
+//User register controller
 const register=async(req,res)=>{
     let postData=req.body;
     try{
@@ -31,7 +29,7 @@ const register=async(req,res)=>{
             let pass=await bcrypt.hash(postData.password,salt);
             postData.password=pass;
             let bl=await registerModel(postData);
-            //判断返回
+            //Judgment return
             if(bl){
                 res.status(200).json({message:"Successful registration"});
             }else{
@@ -43,25 +41,27 @@ const register=async(req,res)=>{
     }
 }
 
-//用户登录控制层
+//User login controller
 const login=async(req,res)=>{
-    console.log(req.body.email);
     let postData=req.body;
+    console.log(postData);
     try{
         await schemaLogin.validateAsync({ email: postData.email,password:postData.password});
         var result=await findEmailModel(postData.email);
         if(result.length>0){
             var password=postData.password;
             var sjpassword=result[0].password;
-            // 验证密码是否相同，第一个参数是传过来的密码，第二个是数据库存的密码
+            // To verify that the password is the same, the first parameter is the passed password and the second is the password of the data stock.
             var isValidate =await bcrypt.compareSync(password, sjpassword);
             if(isValidate){
+                const access_token=await getToken();
                 result[0].password=password;
-                const tokenStr = jwt.sign({ user: result[0] }, secretKey, { expiresIn: '1200s' });
+                const tokenStr = jwt.sign({ user: result[0] }, secretKey, { expiresIn: '3600s' });
                 res.send({
                     status: 200,
                     message: 'Successful Login',
-                    token: tokenStr // 要发送给客户端的 token 字符串,
+                    token: tokenStr, // token string to be sent to the client
+                    access_token:access_token
                 });
             }else{
                 res.send({
@@ -77,7 +77,7 @@ const login=async(req,res)=>{
     }
 }
 
-//用户退出登录控制层
+//User logout controller
 const logout=async(req,res)=>{
     const tokenStr = jwt.sign({ user: req.user}, secretKey, { expiresIn: '1s' });
     res.send({
@@ -87,7 +87,7 @@ const logout=async(req,res)=>{
     });
 }
 
-//用户信息修改控制层
+//User changing information controller
 const update=async(req,res)=>{
     let postData=req.body;
     try{
