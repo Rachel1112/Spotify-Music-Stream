@@ -176,7 +176,7 @@ function Search() {
         </span>
        
         <SubMenu title={"Hello!"+userInfo.username} key="alipay" style={{position:"absolute",right: "1vw"}}>
-          <Menu.Item onClick={loginOut}>Login Out</Menu.Item>
+          <Menu.Item onClick={loginOut}>Logout</Menu.Item>
         </SubMenu>
       </Menu>
 
