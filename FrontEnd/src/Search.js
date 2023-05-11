@@ -1,7 +1,7 @@
 import React, { useState,useEffect, useMemo } from "react";
 import { Menu,notification,Input,Button, List, Avatar  } from 'antd';
 import './style.css';
-
+import $ from 'jquery';
 function Search() {
   const { SubMenu } = Menu;
   const [userInfo,setUserInfo]=useState({});
