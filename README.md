@@ -75,8 +75,8 @@ npm run start
 4. Start the client. In the `FrontEnd` directory, run:
 
 ```
-npm run start
 npm install jquery
+npm run start
 ```
 Make sure the jQuery script is fully loaded into your browser!!! Or you will encounter compilation problems in the first time, please close the FrontEnd port and try again.
 
