@@ -8,7 +8,7 @@ const addMusic=async(req,res)=>{
     let postData=req.body;
     try{
         let bl=await addMusicModel(postData);
-        //Return judgment 
+        //Judge return
         if(bl){
             res.status(200).json({message:"Add Music"});
         }else{
