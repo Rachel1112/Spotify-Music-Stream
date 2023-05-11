@@ -29,7 +29,7 @@ const register=async(req,res)=>{
             let pass=await bcrypt.hash(postData.password,salt);
             postData.password=pass;
             let bl=await registerModel(postData);
-            //Judgment return
+            //Judge return
             if(bl){
                 res.status(200).json({message:"Successful registration"});
             }else{
