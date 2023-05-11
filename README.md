@@ -84,9 +84,10 @@ Make sure the jQuery script is fully loaded into your browser!!! Or you will enc
 5. 
 ```
 To register an account in the web database:
-For email:Please enter 4 to 20 characters in English and numbers that conform to the mailbox format and end with a .com(eg.95677@qq.com)
+For email:Please enter 4 to 20 characters in English and numbers that conform to the mailbox format and end with a .com
+          Format: "number" + @ + "vacabulary" + ".com" (eg.4567@qq.com)
 For username:Please enter 4 to 20 characters consisting of English and numbers, and the number cannot be precededed.(eg. CS2201)
-For password:Please enter 6 to 20 characters consisting of English and numbers.(eg.cs732great)
+For password:Please enter 8 to 20 characters consisting of English and numbers.(eg.cs732great)
 ```
 
 # Interface usage
