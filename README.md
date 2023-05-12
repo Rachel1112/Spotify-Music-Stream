@@ -124,6 +124,13 @@ Password: cs732123321
 
 # Interface usage
 
+This project is a web application that provides a music streaming service. It allows users to register and log in to their accounts, search for music, create and manage playlists, and play/pause music. The main functionalities of this web app include:
+
++ User Authentication: Users can create an account and log in to access the music streaming service.
++ Music Playback: Users can play and pause music tracks.
++ Music and Playlist Search: Users can search for music tracks and playlists.
++ Playlist Creation and Deletion: Users can create and delete their playlists to organize their favorite tracks.
+
 ## '/search' method: get
 Query song information
 - After entering keywords into the search box, click the "search" button. The web page will display all search results.
