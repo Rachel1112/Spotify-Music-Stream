@@ -48,7 +48,7 @@ Before you can run the project, you must have the following installed:
 
   - MongoDB Compass
 
-    MongoDB Compass is a GUI tool for MongoDB that allows you to easily explore and manipulate your data. You can find its detailed information on https://www.mongodb.com/products/compass.
+    MongoDB Compass is a GUI tool for MongoDB that allows you to easily explore and manipulate your data. You can find its detailed information at https://www.mongodb.com/products/compass.
 
 ### Installation
 
@@ -78,31 +78,43 @@ npm run start
 npm install jquery
 npm run start
 ```
-Make sure the jQuery script is fully loaded into your browser!!! Or you will encounter compilation problems in the first time, please close the FrontEnd port and try again.
+Make sure the jQuery script is fully loaded into your browser!!! Or you will encounter compilation problems the first time, please close the FrontEnd port and try again.
 
 
 5. 
 ```
 To register an account in the web database:
-For email:Please enter 4 to 20 characters in English and numbers that conform to the mailbox format and end with a .com
-          Format: "number" + @ + "vacabulary" + ".com" (eg.4567@qq.com)
-For username:Please enter 4 to 20 characters consisting of English and numbers, and the number cannot be precededed.(eg. CS2201)
-For password:Please enter 8 to 20 characters consisting of English and numbers.(eg.cs732great)
+For email: Please enter 4 to 20 characters in English and numbers that conform to the mailbox format and end with a .com
+          Format: "number" + @ + "vocabulary" + ".com" (e.g., 4567@qq.com)
+For username: Please enter 4 to 20 characters consisting of English and numbers, and the number cannot be preceded. (e.g., CS2201)
+For password: Please enter 8 to 20 characters consisting of English and numbers. (e.g., cs732great)
 ```
+**Note**: If you still have the error "MongoError: connect ECONNREFUSED 127.0.0.1:27017" when registering, you can go to the `\BackEnd\models` directory.
+Find the `music.js` and `user.js` documents.
+Modify the code:
+```
+var url = "mongodb://localhost:27017/music";
+```
+To:
+```
+var url = "mongodb://127.0.0.1:27017/music";
+```
+This might help you solve the problem.
+
 
 # Interface usage
 
-## '/me' mthod:get
+## '/me' method: get
 Get user data based on token
-## '/search' mthod:get
+## '/search' method: get
 Query song information
-## '/login' mthod:get
+## '/login' method: get
 The user is logged in, and encryption is used
-## '/register' mthod:post
+## '/register' method: post
 Registered user
-## '/music' mthod:delete
+## '/music' method: delete
 Delete the song data in the playlist according to the song id
-## '/music' mthod:post
+## '/music' method: post
 New solo song
 
 
