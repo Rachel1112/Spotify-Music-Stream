@@ -82,7 +82,7 @@ npm run start
 Make sure the jQuery script is fully loaded into your browser!!! Or you will encounter compilation problems the first time, please close the FrontEnd port and try again.
 
 
-5. 
+5. Registration requirements
 ```
 
 To register an account in the web database:
@@ -103,6 +103,17 @@ To:
 var url = "mongodb://127.0.0.1:27017/music";
 ```
 This might help you solve the problem.
+
+6. Change user permissions
+After login into the website, we can only audition songs. Now we need a Spotify member account.
+(1) Find the **player** at the website's bottom.
+(2) Click the **logo** in the upper right corner. We will jump to Spotify's official website.
+(3) Click on the upper right corner of the Spotify official website. Use the following **email** and **password** to log in:
+```
+Email: 956774414@qq.com
+Password: cs732123321
+```
+(4) Return to our website. Now we can listen to the whole song. 
 
 
 # Interface usage
