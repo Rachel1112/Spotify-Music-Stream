@@ -1,6 +1,7 @@
 # Music streaming service interface
 
-This project is a front-end and back-end separated React project. The front-end is built using React, Ant Design, and Axios. The back-end is built using Node.js, Mongoose, and MongoDB. This README file is intended to provide guidance for other developers to run the demo on their local machines and understand the codebase.
+This project is a web application that provides a music streaming service. It is built using the MERN (MongoDB, Express.js, React, and Node.js) technology stack. The front-end of the application is developed using React, Ant Design for UI components, and Axios for making API requests. The back-end is built with Node.js and utilizes Mongoose as the object data modeling (ODM) library for MongoDB.
+
 
 ## Getting Started
 
