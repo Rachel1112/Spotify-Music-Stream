@@ -136,9 +136,9 @@ Registered user
 
 ## '/music' method: post
 New solo song
-After searching for songs, click the "add" button. The music will be added to the playlist.
-Then click the "play" button in the playlist. The song will be illustrated in the player.
-The user can drag the progress bar and click Pause/Start button to control playback.
+-After searching for songs, click the "add" button. The music will be added to the playlist.
+-Then click the "play" button in the playlist. The song will be illustrated in the player.
+-The user can drag the progress bar and click Pause/Start button to control playback.
 ## '/music' method: delete
 Delete the song data in the playlist according to the song id
 
