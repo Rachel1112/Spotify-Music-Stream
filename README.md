@@ -1,6 +1,6 @@
 # Music streaming service interface
 
-This project is a front-end and back-end separated Vue project. The front-end is built using React, Ant Design, and Axios. The back-end is built using Node.js, Mongoose, and MongoDB. This README file is intended to provide guidance for other developers to run the demo on their local machines and understand the codebase.
+This project is a front-end and back-end separated React project. The front-end is built using React, Ant Design, and Axios. The back-end is built using Node.js, Mongoose, and MongoDB. This README file is intended to provide guidance for other developers to run the demo on their local machines and understand the codebase.
 
 ## Getting Started
 
@@ -83,11 +83,13 @@ Make sure the jQuery script is fully loaded into your browser!!! Or you will enc
 
 5. 
 ```
+
 To register an account in the web database:
 For email: Please enter 4 to 20 characters in English and numbers that conform to the mailbox format and end with a .com
           Format: "number" + @ + "vocabulary" + ".com" (e.g., 4567@qq.com)
 For username: Please enter 4 to 20 characters consisting of English and numbers, and the number cannot be preceded. (e.g., CS2201)
 For password: Please enter 8 to 20 characters consisting of English and numbers. (e.g., cs732great)
+
 ```
 **Note**: If you still have the error "MongoError: connect ECONNREFUSED 127.0.0.1:27017" when registering, you can go to the `\BackEnd\models` directory.
 Find the `music.js` and `user.js` documents.
